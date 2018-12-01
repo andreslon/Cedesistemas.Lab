@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+            BackgroundColor="#f2f2f2"
+            xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab1.App.Pages.LoginPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Image Source="Icon"  
+                       Aspect="AspectFit"
+                       Grid.Column="1" 
+                       VerticalOptions="Center"
+                       Grid.Row="0" />
+
+                <Frame Grid.Column="1" Grid.Row="1">
+                    <StackLayout Spacing="10">
+                        <Label Text="Usuario:"/>
+                        <Entry Text="{Binding Usuario}" Placeholder="usuario@gmail.com"/>
+                        <Label Text="Contraseña:"/>
+                        <Entry Text="{Binding Password}" Placeholder="******" IsPassword="True"/>
+                        
+                        <Button Command="{Binding LoginCommand}"  Text="Ingresar" BackgroundColor="#1abc9c" TextColor="White" />
+                    </StackLayout>
+                </Frame>
+
+
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,5 +1,5 @@
-﻿using Lab1.App.Pages;
-using System;
+﻿using System;
+using Lab1.App.Pages;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,18 +7,20 @@ using Xamarin.Forms.Xaml;
 namespace Lab1.App
 {
     public partial class App : Application
-    {
+    { 
         public App()
         {
             InitializeComponent();
-
-            MainPage = new HomePage();
+            MainPage = new LoginPage(); 
+        }
+        internal static void IrAHome() {
+            Current.MainPage = new HomePage();
         }
 
         protected override void OnStart()
         {
             // Handle when your app starts
-        }
+        } 
 
         protected override void OnSleep()
         {
