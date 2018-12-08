@@ -5,9 +5,9 @@
              x:Class="Lab1.App.Pages.HomePage">
   <!--Pages can be added as references or inline-->
     <ContentPage Title="Tab 1">
-        <StackLayout>
-            <Entry Placeholder="Ingresa tu nombre:"> </Entry>
-        </StackLayout>
+        <ScrollView>
+            <WebView Source="https://flatuicolors.com/palette/defo"></WebView>
+        </ScrollView>
     </ContentPage> 
     <pages:ChatPage /> 
     <ContentPage Title="Tab 3" />

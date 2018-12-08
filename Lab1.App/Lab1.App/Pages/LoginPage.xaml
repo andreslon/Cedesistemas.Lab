@@ -3,8 +3,9 @@
             BackgroundColor="#f2f2f2"
             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Lab1.App.Pages.LoginPage">
+             x:Class="Lab1.App.Pages.LoginPage"> 
     <ContentPage.Content>
+        
         <ScrollView>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -26,12 +27,15 @@
 
                 <Frame Grid.Column="1" Grid.Row="1">
                     <StackLayout Spacing="10">
-                        <Label Text="Usuario:"/>
-                        <Entry Text="{Binding Usuario}" Placeholder="usuario@gmail.com"/>
-                        <Label Text="Contraseña:"/>
-                        <Entry Text="{Binding Password}" Placeholder="******" IsPassword="True"/>
+                        <Label Style="{StaticResource subStyle}" Text="Usuario:"/>
+                        <Entry Text="{Binding User.Usuario}" Placeholder="usuario@gmail.com"/>
+                        <Label Style="{StaticResource subStyle}" Text="Contraseña:"/>
+                        <Entry Text="{Binding User.Password}" Placeholder="******" IsPassword="True"/>
+
+                        <Label Text="Nivel de contraseña" TextColor="{Binding User.Password, Converter={StaticResource LoginConverter}}"></Label>
                         
-                        <Button Command="{Binding LoginCommand}"  Text="Ingresar" BackgroundColor="#1abc9c" TextColor="White" />
+                        <Button  Command="{Binding LoginCommand}"  Text="Ingresar" 
+                                 BackgroundColor="{StaticResource primaryColor}" TextColor="White" />
                     </StackLayout>
                 </Frame>
 
