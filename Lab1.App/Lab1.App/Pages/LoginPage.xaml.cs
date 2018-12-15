@@ -10,7 +10,7 @@ namespace Lab1.App.Pages
         public LoginPage()
         {
             InitializeComponent();
-            BindingContext = new LoginViewModel();
+            BindingContext = App.MainVM;
         }
     }
 }

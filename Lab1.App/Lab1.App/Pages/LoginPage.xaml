@@ -33,8 +33,14 @@
                         <Entry Text="{Binding User.Password}" Placeholder="******" IsPassword="True"/>
 
                         <Label Text="Nivel de contraseña" TextColor="{Binding User.Password, Converter={StaticResource LoginConverter}}"></Label>
-                        
-                        <Button  Command="{Binding LoginCommand}"  Text="Ingresar" 
+
+                        <ActivityIndicator IsRunning="{Binding IsLoading}" 
+                                           IsVisible="{Binding IsLoading}"
+                                           WidthRequest="80"
+                                           HeightRequest="80"
+                                           Color="{StaticResource primaryColor}" ></ActivityIndicator>
+
+                        <Button  IsVisible="{Binding ShowLoginButton}" Command="{Binding LoginCommand}"  Text="Ingresar" 
                                  BackgroundColor="{StaticResource primaryColor}" TextColor="White" />
                     </StackLayout>
                 </Frame>

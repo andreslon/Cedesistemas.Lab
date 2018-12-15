@@ -12,7 +12,7 @@ namespace Lab1.App.Services
             if (!connectivity.IsConnected)
                 return false;
 
-            var reachable = await connectivity.IsRemoteReachable("https://cedesistemasapp.azurewebsites.net/");
+            var reachable = await connectivity.IsRemoteReachable("https://cedesistemasapi.azurewebsites.net/");
             return reachable;
         }
     }

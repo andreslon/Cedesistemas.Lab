@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Vehicles"
+             x:Class="Lab1.App.Pages.VehiclesPage">
+    <ContentPage.Content>
+
+        <ListView x:Name="vehiclesList" 
+                  ItemsSource="{Binding Vehicles}"
+                  HasUnevenRows="True"
+                  SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame HasShadow="True" Margin="5" Padding="5" 
+                               BackgroundColor="#fcfcfc">
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding Image}"
+                                       HorizontalOptions="Center"
+                                       WidthRequest="100"  HeightRequest="100"
+                                       Aspect="AspectFit"></Image> 
+                                <StackLayout>
+                                    <Label Text="{Binding Plate}" FontAttributes="Bold" 
+                                       FontSize="Large"></Label>
+                                    <Label Text="{Binding Description}"></Label>
+                                    <StackLayout Orientation="Horizontal" Spacing="10">
+                                        <Label Text="{Binding Latitude}"></Label>
+                                        <Label Text="{Binding Longitude}"></Label>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                            
+                            
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="{Binding Plate}"
+             x:Class="Lab1.App.Pages.VehicleDetailPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="{Binding Image}"></Image>
+            <Label Text="{Binding Plate}" FontAttributes="Bold" 
+                                       FontSize="Large"></Label>
+            <Label Text="{Binding Description}"></Label>
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Label Text="{Binding Latitude}"></Label>
+                <Label Text="{Binding Longitude}"></Label>
+            </StackLayout>
+            <Label Text="{Binding City}"></Label> 
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

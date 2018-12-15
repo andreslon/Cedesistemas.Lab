@@ -1,9 +1,11 @@
-﻿namespace Lab1.App.Models.Responses
+﻿using Lab1.App.Extensions;
+
+namespace Lab1.App.ViewModels
 {
-    public class VehicleFullDto
+    public class VehicleViewModel : NotifyProperty
     {
         public int Id { get; set; }
-        public string Plate { get; set; }
+        public string Plate { get; set; } 
         public double Latitude { get; set; }
         public double Longitude { get; set; }
         public string City { get; set; }

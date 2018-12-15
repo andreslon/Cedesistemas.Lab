@@ -33,7 +33,7 @@ namespace Cedesistemas.Api.Controllers
                 .Where(x => x.Username == dto.Username && x.Password == dto.Password);
             if (user != null && user.Count() > 0)
             {
-                return Ok(user);
+                return Ok(user.FirstOrDefault());
             }
             else
             {

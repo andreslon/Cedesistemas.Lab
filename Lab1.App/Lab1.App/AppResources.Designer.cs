@@ -61,7 +61,7 @@ namespace Lab1.App {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a https://cedesistemasapp.azurewebsites.net/api.
+        ///   Busca una cadena traducida similar a https://cedesistemasapi.azurewebsites.net/api.
         /// </summary>
         internal static string ApiUri {
             get {
