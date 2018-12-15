@@ -22,6 +22,8 @@ namespace Cedesistemas.Api.Controllers
             return db.Vehicles;
         }
 
+        
+
         // GET: api/Vehicles/5
         [ResponseType(typeof(Vehicles))]
         public IHttpActionResult GetVehicles(int id)

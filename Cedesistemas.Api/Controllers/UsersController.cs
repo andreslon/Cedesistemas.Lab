@@ -1,20 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Cedesistemas.Api.Models;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using Cedesistemas.Api.Models;
 
 namespace Cedesistemas.Api.Controllers
 {
     public class UsersController : ApiController
     {
         private cedesistemasdbEntities db = new cedesistemasdbEntities();
+
+        [Route("api/users/{userId}/vehicles")]
+        [HttpGet]
+        public IQueryable<Vehicles> GetVehicles(int userId)
+        { 
+            return db.Vehicles.Where(x => x.UserId == userId);
+        }
+
+        [ResponseType(typeof(Users))]
+        [Route("api/Login")]
+        [HttpPost]
+        public IHttpActionResult Login(LoginDto dto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var user = db.Users
+                .Where(x => x.Username == dto.Username && x.Password == dto.Password);
+            if (user != null && user.Count() > 0)
+            {
+                return Ok(user);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
 
         // GET: api/Users
         public IQueryable<Users> GetUsers()

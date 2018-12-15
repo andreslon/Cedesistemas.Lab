@@ -189,6 +189,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CedesistemasContext.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\LoginDto.cs" />
     <Compile Include="Models\Users.cs">
       <DependentUpon>CedesistemasContext.tt</DependentUpon>
     </Compile>
@@ -244,6 +245,7 @@
     <Content Include="Models\CedesistemasContext.edmx.diagram">
       <DependentUpon>CedesistemasContext.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\cedesistemasapi - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
